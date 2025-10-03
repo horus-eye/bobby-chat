@@ -14,6 +14,7 @@ if (!process.env.GEMINI_API_KEY) {
     console.error("❌ ERROR: La variable de entorno GEMINI_API_KEY no está configurada.");
     process.exit(1);
 }
+console.log("DEBUG: GEMINI_API_KEY cargada (primeros 5 caracteres):", process.env.GEMINI_API_KEY ? process.env.GEMINI_API_KEY.substring(0, 5) + '...' : 'No definida');
 
 // --- 2. MIDDLEWARES DE EXPRESS ---
 app.use(cors()); // Permite que tu frontend (en otro dominio) se comunique con este backend
@@ -21,7 +22,7 @@ app.use(express.json());
 
 // --- 3. CONFIGURACIÓN DE GEMINI ---
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = "gemini-pro";
+const model = "gemini-2.5-flash";
 let chat;
 
 function initializeChat() {
