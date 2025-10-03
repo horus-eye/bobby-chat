@@ -21,7 +21,7 @@ app.use(express.json());
 
 // --- 3. CONFIGURACIÓN DE GEMINI ---
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = "gemini-1.5-flash";
+const model = "gemini-pro";
 let chat;
 
 function initializeChat() {

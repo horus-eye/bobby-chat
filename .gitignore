@@ -13,3 +13,7 @@ yarn-error.log*
 # Archivos de sistema operativo
 .DS_Store
 Thumbs.db
+
+index.html
+
+.gitignore
